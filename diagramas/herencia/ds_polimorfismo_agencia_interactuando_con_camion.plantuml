@@ -2,10 +2,15 @@
 
 title Agencia interactuando con Camion
 
-"a: Agencia" -> ":Camion": alquiler(2)
+"a: Agencia" -> ":Camion": alquilar(2)
 
-":Camion" -> ":Camion": precioBase()
+activate ":Camion"
+":Camion" -> "c: CostoBase": multiplicar(2)
+"c: CostoBase" --> ":Camion": 2 * 1500
+
 ":Camion" -> ":Camion": precioPma()
+
+deactivate ":Camion"
 
 ":Camion" --> "a: Agencia": [precioBase + precioPMA]
 

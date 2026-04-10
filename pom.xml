@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>ar.edu.uba.fi</groupId>
-  <artifactId>algo3_alquiler_autos</artifactId>
+  <artifactId>algo3_alquilar_autos</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <properties>
@@ -10,7 +10,7 @@
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
-  <name>algo3_alquiler_autos</name>
+  <name>algo3_alquilar_autos</name>
   <url>http://maven.apache.org</url>
   <dependencies>
 

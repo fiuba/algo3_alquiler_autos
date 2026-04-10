@@ -7,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Unit test for simple App.
  */
-public class AlquilerVehiculosTest
+public class alquilarVehiculosTest
 {
     @Test
-    public void testRegistroCherryQQElCostoDeAlquilerPor1DiaEs900() {
+    public void testRegistroCherryQQElCostoDealquilarPor1DiaEs900() {
         Agencia a = new Agencia();
 
         a.registrar( new Auto("abc-123", "Cherry QQ"));
@@ -20,7 +20,7 @@ public class AlquilerVehiculosTest
     }
 
     @Test
-    public void testRegistroCargaElCostoDeAlquilerPor1DiaEs900() {
+    public void testRegistroCargaElCostoDealquilarPor1DiaEs900() {
         Agencia a = new Agencia();
 
         a.registrar( new Camion("abc-123", 5));

@@ -2,21 +2,19 @@ package ar.edu.uba.fi.herencia;
 
 public abstract class Vehiculo {
 
-    private String unaPatenteStr;
+    private Patente patente;
 
-    public Vehiculo(String unaPatenteStr) {
-
-        this.unaPatenteStr = unaPatenteStr;
+    public Vehiculo(Patente patente) {
+        this.patente = patente;
     }
 
-    boolean sos(String unaPatenteStr) {
-
-        return unaPatenteStr.equals(unaPatenteStr);
-    };
+    boolean tengoPatente(Patente unaPatente) {
+        return this.patente.equals(unaPatente);
+    }
 
     abstract double alquilar(int unosDias);
 
-    public boolean sos(Vehiculo vehiculo) {
-        return this.unaPatenteStr.equals(vehiculo.unaPatenteStr);
+    public boolean igualA(Vehiculo vehiculo) {
+        return this.patente.equals(vehiculo.patente);
     }
 }

@@ -1,8 +1,9 @@
 package ar.edu.uba.fi.herencia;
 
 public class Bus extends Vehiculo {
-    public Bus(String unaPatenteStr) {
-        super(unaPatenteStr);
+    public Bus(String patenteComoString) {
+
+        super(new Patente(patenteComoString));
     }
 
     @Override

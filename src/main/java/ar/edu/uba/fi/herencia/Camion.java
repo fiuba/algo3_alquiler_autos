@@ -1,11 +1,15 @@
 package ar.edu.uba.fi.herencia;
 
+import ar.edu.uba.fi.interfaces.CostoBase;
+
 public class Camion extends Vehiculo {
     private int pma;
+    private final CostoBase costoBase;
 
-    public Camion(String unaPatenteStr, int pma) {
-        super(unaPatenteStr);
+    public Camion(String patenteComoString, int pma) {
+        super(new Patente(patenteComoString));
         this.pma = pma;
+        this.costoBase = new CostoBase();
     }
 
     @Override
@@ -18,7 +22,7 @@ public class Camion extends Vehiculo {
     private double precioBase(int unosDias) {
 
 
-        return unosDias * 500;
+        return this.costoBase.multiplicar(unosDias);
     }
 
 }

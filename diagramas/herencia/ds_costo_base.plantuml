@@ -1,0 +1,19 @@
+@startuml
+
+title CostoBase
+
+create "a: Auto"
+":TestCase" -> "a: Auto": Auto()
+
+create "quinientos :CostoBase"
+"a: Auto" -> "quinientos :CostoBase": new
+
+"a: Auto" -> "quinientos :CostoBase": mitad()
+
+create "mitad :CostoBase"
+"quinientos :CostoBase" -> "mitad :CostoBase": new
+
+"quinientos :CostoBase" --> "a: Auto": [mitad]
+
+
+@enduml

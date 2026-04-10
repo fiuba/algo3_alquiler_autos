@@ -7,8 +7,8 @@ class Agencia {
 }
 
 abstract class  Vehiculo {
-        + sos(Patente)
-        + {abstract} alquilarDias(unosDias)
+        + tengoPagente(Patente)
+        + {abstract} alquilar(unosDias) : double
 }
 
 class TipoPlaza {
@@ -18,22 +18,33 @@ class TipoPlaza {
     + alquilar(Integer numeroPlazas) : double
 }
 
+class CostoBase {
+    - int valor
+
+    + CostoBase()
+    + CostoBase(int valorInicial)
+    + double sumarCon(int i)
+    + double multiplicar(int unosDias)
+}
 class PlazaBasica {
 
-    + PlazaBasica(int precioPlaza)
+    + PlazaBasica()
 }
 
 class PlazaPremium {
 
-    + PlazaPremium(int precioPlaza)
+    + PlazaPremium()
 }
 class Auto {
-        - modelo
+        - numeroPlazas
 
         + patente(Patente)
         + sos(Patente)
         + alquilarDias(unosDias)
 }
+
+CostoBase -* Auto
+CostoBase -* Camion
 
 class Camion {
         - pma

@@ -2,11 +2,17 @@
 
 title Agencia interactuando con Auto
 
-"a: Agencia" -> ":Auto": alquiler(2)
-":Auto" -> "p: PlazasBasica": alquiler(4)
+"a: Agencia" -> ":Auto": alquilar(2)
+":Auto" -> ":Auto": precioBase(2)
+activate ":Auto"
+":Auto" -> "c: CostoBase": multiplicar(2)
+"c: CostoBase" --> ":Auto": 2 * 500
 
-"p: PlazasBasica" --> ":Auto": [valor]
-"a: Agencia" <-- ":Auto": [valor]
+":Auto" -> "p: PlazasBasica": alquilar(4 /* plazas */)
+"p: PlazasBasica" --> ":Auto": 4 * 100
+deactivate ":Auto"
+
+"a: Agencia" <-- ":Auto": [base] + [plazas]
 
 
 @enduml

@@ -1,14 +1,17 @@
 package ar.edu.uba.fi.herencia;
 
+import ar.edu.uba.fi.interfaces.CostoBase;
+
 public class Auto extends Vehiculo {
     private Integer numeroPlazas;
     private TipoPlaza tipoPlazas;
 
-    public Auto(String unPatenteStr, Integer numeroPlazas, TipoPlaza tipoPlazas) {
-
-        super(unPatenteStr);
+    private CostoBase costoBase;
+    public Auto(String patenteComoString, Integer numeroPlazas, TipoPlaza tipoPlazas) {
+        super(new Patente(patenteComoString));
         this.numeroPlazas = numeroPlazas;
         this.tipoPlazas = tipoPlazas;
+        this.costoBase = new CostoBase();
     }
 
     public double alquilar(int unosDias) {
@@ -18,7 +21,7 @@ public class Auto extends Vehiculo {
 
     private double precioBase(int unosDias) {
 
-        return unosDias * 500;
+        return this.costoBase.multiplicar(unosDias);
     }
 
 

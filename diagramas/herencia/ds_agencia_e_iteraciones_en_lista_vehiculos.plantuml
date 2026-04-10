@@ -8,25 +8,25 @@ Desarrollador -> ":TestCase": run
 create "a: Agencia"
 ":TestCase" -> "a: Agencia": Agencia()
 
-":TestCase" -> "a: Agencia": registrar(vehiculo)
+":TestCase" -> "a: Agencia": registrar(otroVehiculo)
 
-"a: Agencia" -> "a: Agencia": encontrar(vehiculo)
-activate "a: Agencia"
-loop Para cada vehiculo
-    "a: Agencia" -> ":Vehiculo": sos(auto)
-end
-deactivate "a: Agencia"
+"a: Agencia" -> "a: Agencia": encontrar(otroVehiculo)
+    activate "a: Agencia"
+    loop Para cada vehiculo
+        "a: Agencia" -> ":Vehiculo": igualA(auto)
+    end
+    deactivate "a: Agencia"
 
 ":TestCase" -> "a: Agencia": alquilarDias("abc-123", 2)
 
-"a: Agencia" -> "a: Agencia": encontrar("abc-123")
+"a: Agencia" -> "a: Agencia": encontrar(new Patente("abc-123"))
 activate "a: Agencia"
 loop Para cada vehiculo
-    "a: Agencia" -> ":Vehiculo": sos("abc-123")
+    "a: Agencia" -> ":Vehiculo": tengoPatente(new Patente("abc-123"))
 end
 deactivate "a: Agencia"
 
-"a: Agencia" -> ":Vehiculo": alquiler(2)
+"a: Agencia" -> ":Vehiculo": alquilar(2)
 ":Vehiculo" --> "a: Agencia": [valor]
 
 ":TestCase" <-- "a: Agencia": [valor]
