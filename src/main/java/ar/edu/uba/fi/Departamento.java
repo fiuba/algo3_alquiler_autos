@@ -1,6 +1,6 @@
 package ar.edu.uba.fi;
 
-public class Departamento extends Inmueble {
+public class Departamento extends Producto {
     private int metrosCuadrados;
 
     public Departamento(String direccion, int metrosCuadrados){

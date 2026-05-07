@@ -2,17 +2,18 @@ package ar.edu.uba.fi;
 import java.util.List;
 
 public class Agencia {
-    private List<Inmueble> inmuebles;
+    private List<Alquilable> productos;
     
-    public Agencia(List<Inmueble> inmuebles){
-        this.inmuebles = inmuebles;
+    public Agencia(List<Alquilable> productos){
+        this.productos = productos;
     }
 
-    public int alquilarInmuebleConDireccionYPorUnosDias(String direccion, int cantidadDias){
+    public int alquilarProductoPorUnosDias(String idProducto, int cantidadDias){
         int acumulador = 0;
-        for(Inmueble inmueble : inmuebles){
-            acumulador += inmueble.calcularAlquilerPorUnosDiasSiMiDireccionCoincide(direccion, cantidadDias);
+        for(Alquilable producto : productos){
+            acumulador += producto.calcularAlquilerPorUnosDiasSiMiIdCoincide(idProducto, cantidadDias);
         }
         return acumulador;
     }
+
 }

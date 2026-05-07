@@ -56,7 +56,7 @@ public class AlquilerInmueblesTest {
         ));
 
         // Act
-        int alquiler = agencia.alquilarInmuebleConDireccionYPorUnosDias("Jose Bonifacio 500", 15);
+        int alquiler = agencia.alquilarProductoPorUnosDias("Jose Bonifacio 500", 15);
 
         // Assert
         assertEquals(750, alquiler);
@@ -74,7 +74,7 @@ public class AlquilerInmueblesTest {
         ));
 
         // Act
-        int alquiler = agencia.alquilarInmuebleConDireccionYPorUnosDias("Scalabrini Ortiz 890", 7);
+        int alquiler = agencia.alquilarProductoPorUnosDias("Scalabrini Ortiz 890", 7);
 
         // Assert
         assertEquals(0, alquiler);

@@ -1,6 +1,6 @@
 package ar.edu.uba.fi;
 
-public class HHotel extends Inmueble {
+public class HHotel extends Producto {
     private int camas;
 
     public HHotel(String direccion, int camas){

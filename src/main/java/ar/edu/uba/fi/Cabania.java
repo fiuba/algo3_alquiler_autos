@@ -1,11 +1,11 @@
 package ar.edu.uba.fi;
 
-public class Cabania extends Inmueble {
+public class Cabania extends Producto {
     private int cantidadInquilinos;
 
-    public Cabania(String direccion, int capacidad) {
+    public Cabania(String direccion, int cantidadInquilinos) {
         super(direccion);
-        this.cantidadInquilinos = capacidad;
+        this.cantidadInquilinos = cantidadInquilinos;
     }
 
     @Override
